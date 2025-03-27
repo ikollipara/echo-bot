@@ -13,8 +13,11 @@ from dataclasses import dataclass
 from http import HTTPStatus
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app, allow_headers=["*"])
 
 
 @dataclass(frozen=True)
